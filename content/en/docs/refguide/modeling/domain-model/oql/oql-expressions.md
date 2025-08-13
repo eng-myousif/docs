@@ -34,7 +34,7 @@ When combined with a `GROUP BY` clause, aggregations in `SELECT` clauses can be 
 ```sql
   COUNT ( * )
   | { COUNT | AVG | MAX | MIN | SUM } ( [ DISTINCT ] attribute_path )
-  | STRING_AGG ( attribute_path )
+  | STRING_AGG ( attribute_path, separator )
 ```
 
 Where `attribute_path` is an attribute reachable from entities defined in the `FROM` and `JOIN` clauses.
@@ -77,10 +77,6 @@ STRING_AGG ( attribute_path, separator )
 ```
 
 `separator` is any expression of type `STRING`. 
-
-{{% alert color="info" %}}
-This aggregate function is only supported in Java actions.
-{{% /alert %}}
 
 ### Examples
 
